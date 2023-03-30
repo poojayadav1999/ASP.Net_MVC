@@ -57,7 +57,7 @@ namespace AssignmentCodeFirstCheckbox.Controllers
             return View("_CheckListView", v.ToList());
         }
         [ChildActionOnly]
-        public ActionResult GetCall(Int64 id)
+        public ActionResult GetCal(Int64 id)
         {
             var rec = this.cc.Products.Find(id);
             var pc = rec.ProductColors.Select(a => a.ColorId).ToList();
