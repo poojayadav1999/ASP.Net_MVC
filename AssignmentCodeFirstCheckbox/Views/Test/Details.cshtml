@@ -1,0 +1,60 @@
+﻿@model AssignmentCodeFirstCheckbox.Models.Product
+@{
+    Layout = null;
+}
+
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+    <script src="~/Scripts/bootstrap.js"></script>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        <div>
+            @Html.LabelFor(p => p.ProductName)
+            <div>
+               @Html.DisplayFor(p=>p.ProductName)
+            </div>
+        </div>
+
+        <div>
+            @Html.LabelFor(p => p.MfgName)
+            <div>
+                @Html.DisplayFor(p => p.MfgName)
+            </div>
+        </div>
+
+        <div>
+            @Html.LabelFor(p => p.Price)
+            <div>
+                @Html.DisplayFor(p => p.Price)
+            </div>
+        </div>
+
+        <div>
+            @Html.Label("Choose Color")
+            <div>
+                <ol>
+                    @foreach (var temp in ViewBag.chk)
+                    {
+                        <li>@temp.Text</li>
+                    }
+                </ol>
+            </div>
+        </div>
+
+
+        <div>
+            <input type="submit" value="Save" />
+        </div>
+
+    }
+
+</body>
+</html>

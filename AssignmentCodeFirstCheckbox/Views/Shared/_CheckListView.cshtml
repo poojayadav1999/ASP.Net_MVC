@@ -1,0 +1,18 @@
+﻿@model IEnumerable<AssignmentCodeFirstCheckbox.Models.CBoxVM>
+
+@{ 
+    Layout = null;
+}
+
+@foreach(var temp in Model)
+{
+    if(temp.IsSelected)
+     {
+        <input type="checkbox" name="chk" checked="checked" value="@temp.Value"/>@temp.Text<br />
+
+    }
+    else
+     {
+        <input type="checkbox" name="chk" value="@temp.Value"/>@temp.Text<br />
+     }
+}
